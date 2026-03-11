@@ -1,0 +1,23 @@
+- minikube start
+- kubectl get nodes
+- kubectl create namespace argocd
+- kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+- kubectl get pods -n argocd
+- kubectl port-forward svc/argocd-server -n argocd 8080:443
+- kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}"
+- echo <password> | base64 --decode
+
+
+- Open http://localhost:8080
+- Application Name: demo-app
+Project: default
+Repository URL: GitHub repository containing Kubernetes YAML
+Path: k8s/
+Cluster URL: https://kubernetes.default.svc
+Namespace: default
+
+Click Create.
+
+SYNCED
