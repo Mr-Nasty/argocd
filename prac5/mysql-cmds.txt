@@ -1,0 +1,2 @@
+- docker run -d --name demo -p 3306:3306 -e MYSQL_ROOT_PASSWORD=student123 mysql:8-oracle
+- docker exec -it demo mysql -uroot -pstudent123
